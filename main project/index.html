@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewpoint" content="width=device-width, initial-scal=1.0">
+    <title>Car dealer landing page - San Dulquer</title>
+
+    <!-- custom CSS-->
+    <link rel="stylesheet" href="style.css">
+    <!-- boxicons icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+     <!-- main menu  -->
+    <header>
+        <a href="#" class="logo">
+            <img src="Images/logo0_processed.png" alt="">
+        </a>
+
+        <ul class="navbar">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#categories">categories</a></li>
+            <li><a href="#shop">Shop</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
+
+        <div class="header-icons">
+            <a href="login.html"><i class='bx bxs-user'></i></a>
+            <a href="#"><i class='bx bxs-cart-alt' ></i></a>
+            <div class='bx bx-menu-alt-right' id="menu-icon"></div>
+        </div>
+    </header>
+
+    <!-- home section  -->
+    <section class="home" id="home">
+        <div class="home-content">
+            <div class="home-text">
+                <p>Find cars for sale and for rent near you!</p>
+                <h1>Find Your Dream Car</h1>
+            </div>
+            <form id="carSearchForm">
+                <div>
+                    <label for="make">Make:</label>
+                    <select id="make" onchange="showYears()">
+                    <option value="" disabled selected>Select Make</option>
+                    <option value="mercedes benz">Mercedes Benz</option>
+                    <option value="bmw">BMW</option>
+                    <option value="audi">Audi</option>
+                    <option value="bentley">Bentley</option>
+                    <option value="land lover">Land Rover</option>
+                    <option value="ford">Ford</option>
+                    <option value="nissan">Nissan</option>
+                    <option value="lamborghini">Lamborghini</option>
+                    <option value="toyota">Toyota</option>
+                    <option value="honda">Honda</option>
+                    <option value="volkswagen">Volkswagen</option>
+                    <option value="porsche">Porsche</option>
+                    </select>
+                </div>
+
+                <div id="years" class="hidden">
+                    <label for="year">Year of Manufacture</label>
+                    <select id="year">
+                        <option value="" disabled selected>Select Year</option>
+                        <option value="2015">2015</option>
+                        <option value="2016">2016</option>
+                        <option value="2017">2017</option>
+                        <option value="2018">2018</option>
+                        <option value="2019">2019</option>
+                        <option value="2020">2020</option>
+                        <option value="2021">2021</option>
+                        <option value="2022">2022</option>
+                        <option value="2023">2023</option>  
+                    </select>
+                </div>
+
+                <div>
+                    <label for="budget">Budget In ₹</label>
+                    <input type="number" id="budget" placeholder="Enter Your Budget">
+                </div>
+
+                <button type="button" onclick="searchCars()">Search</button>
+            </form>
+
+            <div class="home-img">
+                <img src="Images/home1.png" alt="">
+            </div>
+        </div>
+    </section>
+
+    <section class="container">
+        <h2>Browse by Type</h2>
+
+        <div class="container-box">
+            <div class="container-img">
+                <img src="Images/micro.png" width="70px" alt="">
+            </div>
+            <div class="container-text">
+                <p>MICRO</p>
+            </div>
+        </div>
+
+        <div class="container-box">
+            <div class="container-img">
+                <img src="Images/hatchback.png" width="70px" alt="">
+            </div>
+            <div class="container-text">
+                <p>HATCHBACK</p>
+            </div>
+        </div>
+
+        <div class="container-box">
+            <div class="container-img">
+                <img src="Images/crossover.png" width="70px" alt="">
+            </div>
+            <div class="container-text">
+                <p>CROSSOVER</p>
+            </div>
+        </div>
+
+        <div class="container-box">
+            <div class="container-img">
+                <img src="Images/sedan.png" width="70px" alt="">
+            </div>
+            <div class="container-text">
+                <p>SEDAN</p>  
+            </div>
+        </div>
+
+        <div class="container-box">
+            <div class="container-img">
+                <img src="Images/coupe.png" width="70px" alt="">
+            </div>
+            <div class="container-text">
+                <p>COUPE</p>
+            </div>
+        </div>
+
+        <div class="container-box">
+            <div class="container-img">
+                <img src="Images/SUV.png" width="70px" alt="">
+            </div>
+            <div class="container-text">
+                <p>SUV</p>
+            </div>
+        </div>
+
+        <div class="container-box">
+            <div class="container-img">
+                <img src="Images/Convertible.png" width="70px" alt="">
+            </div>
+            <div class="container-text">
+                <p>CONVERTIBLE</p>
+            </div>
+        </div>
+
+        <div class="container-box">
+            <div class="container-img">
+                <img src="Images/sport-car.png" width="70px" alt="">
+            </div>
+            <div class="container-text">
+                <p>SPORT</p>
+            </div>
+        </div>
+
+        <div class="container-box">
+            <div class="container-img">
+                <img src="Images/muscle.png" width="70px" alt="">
+            </div>
+            <div class="container-text">
+                <p>MUSCLE</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- most sold categories  -->
+    <section class="categories" id="categories">
+        <div class="center-text">
+            <h5>Popular Cars</h5>
+            <h2>Most Sold Cars</h2>
+        </div>
+
+        <div class="categories-content">
+            <div class="box">
+                <img src="Images/Benz.png" width="100px" alt="">
+                <h3><a href="https://www.mercedes-benz.com/en/">Benz</a></h3>
+                <p>63k Sales</p>   
+            </div>
+            
+
+            <div class="box">
+                <img src="Images/bmw.png" width="100px" alt="">
+                <h3><a href="https://www.bmw.in/en/all-models.html">BMW</a></h3>
+                <p>45k Sales</p>   
+            </div>
+
+            <div class="box">
+                <img src="Images/audi.png" width="100px" alt="">
+                <h3><a href="https://www.audi.in/in/web/en/models.html">Audi</a></h3>
+                <p>35k Sales</p>   
+            </div>
+
+            <div class="box">
+                <img src="Images/bentley.png" width="100px" alt="">
+                <h3><a href="https://www.bentleymotors.com/en/models.html#card-item-6ca45a664d">Bentley</a></h3>
+                <p>33k Sales</p>  
+            </div>
+
+            <div class="box">
+                <img src="Images/landrover.png" width="100px" alt="">
+                <h3><a href="https://www.landrover.in/index.html">Land Rover</a></h3>
+                <p>30k Sales</p>   
+            </div>
+
+            <div class="box">
+                <img src="Images/ford.png" width="100px" alt="">
+                <h3><a href="https://www.ford.com/suvs/?gnav=header-suv-veh-segment">Ford</a></h3>
+                <p>25k Sales</p>   
+            </div>
+
+            <div class="box">
+                <img src="Images/nissan.png" width="100px" alt="">
+                <h3><a href="https://www.nissan.in/">Nissan</a></h3>
+                <p>20k Sales</p>   
+            </div>
+
+            <div class="box">
+                <img src="Images/lamborghini.png" width="100px" alt="">
+                <h3><a href="https://www.lamborghini.com/en-en/models">Lamborghini</a></h3>
+                <p>15k Sales</p>   
+            </div>
+
+            <div class="box">
+                <img src="Images/toyota.png" width="100px" alt="">
+                <h3><a href="https://www.toyota.com/">Toyota</a></h3>
+                <p>12k Sales</p>   
+            </div>
+
+            <div class="box">
+                <img src="Images/Honda.png" width="100px" alt="">
+                <h3><a href="https://www.hondacarindia.com/">Honda</a></h3>
+                <p>10k Sales</p>   
+            </div>
+
+            <div class="box">
+                <img src="Images/VW.png" width="100px" alt="">
+                <h3><a href="https://www.volkswagen.co.in/en.html">Volkswagen</a></h3>
+                <p>9k Sales</p>   
+            </div>
+
+            <div class="box">
+                <img src="Images/porsche.png" width="100px" alt="">
+                <h3><a href="https://www.porsche.com/middle-east/_india_/">Porsche</a></h3>
+                <p>8k Sales</p>   
+            </div>
+
+        </div>
+
+
+        <div class="main-btn">
+            <a href="#" class="btn">Browse All Cars</a>
+        </div>
+    </section>
+
+    <!-- latest cars  -->
+    <section class="shop" id="shop">
+        <div class="center-text">
+            <h5>Shop</h5>
+            <h2>Latest Cars</h2>
+        </div>
+
+        <div class="shop-content">
+            <div class="row">
+                <img src="Images/g63.jpg" alt="">
+                <div class="shop-text">
+                    <h5>₹2.45 Cr*</h5>
+                    <h3>Benz G63</h3>
+                    <p>Engine: 4.0-liter V8 biturbo engine with 577 horsepower and 627 Nm of torque</p>
+                    <a href="https://www.mercedes-amg.com/en/home/vehicles/g-class/suv.html" class="view-details-link">View Details</a>
+                </div>
+            </div>
+
+            <div class="row">
+                <img src="Images/gls600.jpg" alt="">
+                <div class="shop-text">
+                    <h5>₹3.35 Cr*</h5>
+                    <h3>Benz GLS 600</h3>
+                    <p>Engine: 4.0 L V8 biturbo with mild hybrid drive.Horsepower: 550 hp @ 6,000-6,500 rpm</p>
+                    <a href="https://www.mercedes-amg.com/en/home/vehicles/gls/suv.html" class="view-details-link">View Details</a>
+                </div>
+            </div>
+
+            <div class="row">
+                <img src="Images/m5.jpg" alt="">
+                <div class="shop-text">
+                    <h5>₹1.8 Cr*</h5>
+                    <h3>BMW M5 Competition</h3>
+                    <p>Engine: 4.4-liter BMW M TwinPower Turbo V-8, 32-valve, 600-hp engine</p>
+                    <a href="https://www.bmw-me.com/en/all-models/m-series/m5-sedan/2021/bmw-5-series-sedan-m-automobiles-overview.html" class="view-details-link">View Details</a>
+                </div>
+            </div>
+
+            <div class="row">
+                <img src="Images/x6.jpg" alt="">
+                <div class="shop-text">
+                    <h5>₹1.11 Cr*</h5>
+                    <h3>BMW X6 M Competition</h3>
+                    <p>Engine: 4.4-liter BMW M TwinPower Turbo V-8 engine with 617 horsepower and a 48V mild-hybrid system</p>
+                    <a href="https://www.bmw-me.com/en/all-models/m-series/x6-m/2023/bmw-x6-m-automobiles-overview.html" class="view-details-link">View Details</a>
+                </div>
+            </div>
+
+            <div class="row">
+                <img src="Images/s8.jpg" alt="">
+                <div class="shop-text">
+                    <h5>₹1.63 Cr*</h5>
+                    <h3>Audi S8</h3>
+                    <p>Engine: 4.0-liter twin-turbocharged TFSI V8 engine with 244 in3 displacement.</p>
+                    <a href="https://www.audiusa.com/us/web/en/models/a8/s8-sedan/2024/overview.html" class="view-details-link">View Details</a>
+                </div>
+            </div>
+
+            <div class="row">
+                <img src="Images/r8.jpg" alt="">
+                <div class="shop-text">
+                    <h5>₹2.72 Cr*</h5>
+                    <h3>Audi R8</h3>
+                    <p>Engine: 5204 cc, 10-cylinder, naturally-aspirated, petrol engine</p>
+                    <a href="https://www.audiusa.com/us/web/en/models/r8/r8-heritage/2024/overview.html" class="view-details-link">View Details</a>
+                </div>
+            </div>
+
+            <div class="row">
+                <img src="Images/bentley1.jpg" alt="">
+                <div class="shop-text">
+                    <h5>₹4.04 Cr*</h5>
+                    <h3>Bentley Continental GT</h3>
+                    <p>This model has a 6-liter twin-turbocharged W12 engine, 650 bhp (659 PS), and 900 Nm (664 lb-ft) of torque.</p>
+                    <a href="https://www.bentleymotors.com/en/models/continental-gtc/continental-gtc.html" class="view-details-link">View Details</a>
+                </div>
+            </div>
+
+            <div class="row">
+                <img src="Images/bentley2.jpg" alt="">
+                <div class="shop-text">
+                    <h5>₹7.6 Cr*</h5>
+                    <h3>Bentley Flying Spur</h3>
+                    <p>The V8 engine produces 542 horsepower and 770 Nm of torque, while the W12 engine produces 626 horsepower.</p>
+                    <a href="https://www.bentleymotors.com/en/models/flying-spur.html" class="view-details-link">View Details</a>
+                </div>
+            </div>
+
+            <div class="row">
+                <img src="Images/car5.jpg" alt="">
+                <div class="shop-text">
+                    <h5>₹4.47 Cr*</h5>
+                    <h3>Ranger Rover</h3>
+                    <p>Range Rover has five petrol engines and one diesel engine, ranging from 2996–4395 cc. </p>
+                    <a href="https://www.landrover.in/range-rover/range-rover/index.html" class="view-details-link">View Details</a>
+                </div>
+            </div>
+
+            <div class="row">
+                <img src="Images/car6.jpg" alt="">
+                <div class="shop-text">
+                    <h5>₹2.35 Cr*</h5>
+                    <h3>Defender 90 Pacific</h3>
+                    <p>The Defender has a variety of engine options, including 2.0-liter petrol P400, 2.0 L</p>
+                    <a href="https://www.landrover.com.au/explore-land-rover/news/2023/december/defender-pacific-blue-edition.html" class="view-details-link">View Details</a>
+                </div>
+            </div>
+
+            <div class="row">
+                <img src="Images/ford1.jpg" alt="">
+                <div class="shop-text">
+                    <h5>₹55 Lakh*</h5>
+                    <h3>Ford Everest</h3>
+                    <p>Two turbo-diesel engine options: a 2.0-liter Bi-Turbo four-cylinder and a 3.0-liter V6.</p>
+                    <a href="https://www.ford.co.th/en/showroom/ppvs/ford-everest/sport/" class="view-details-link">View Details</a>
+                </div>
+            </div>
+
+            <div class="row">
+                <img src="Images/ford2.jpg" alt="">
+                <div class="shop-text">
+                    <h5>₹74.61 Lakh*</h5>
+                    <h3>Ford Mustang</h3>
+                    <p>engine has 2.3-liter, 4-cylinder engine with 310 horsepower, and a 5.2-liter supercharged V8 engine with 760 horsepower.</p>
+                    <a href="https://www.ford.com/cars/mustang/" class="view-details-link">View Details</a>
+                </div>
+            </div>
+
+            <div class="row">
+                <img src="Images/gtr.jpg" alt="">
+                <div class="shop-text">
+                    <h5>₹2.12 Cr*</h5>
+                    <h3>Nissan GTR</h3>
+                    <p>Engine: 3.8-liter DOHC 24-valve twin-turbocharged V6 engine with 565 horsepower and 467 lb-ft of torque</p>
+                    <a href="https://www.nissanusa.com/vehicles/sports-cars/gt-r.html" class="view-details-link">View Details</a>
+                </div>
+            </div>
+
+            <div class="row">
+                <img src="Images/xtrail.jpg" alt="">
+                <div class="shop-text">
+                    <h5>₹26 Lakh*</h5>
+                    <h3>Nissan X-Trail</h3>
+                    <p>Engine: 2.5 liter, 4-cylinder, inline engine with 16 valves, twin CVTC, and DOHC. Max horsepower: 181 hp at 6,000 rpm</p>
+                    <a href="https://www.nissan-me.com/vehicles/new/x-trail.html" class="view-details-link">View Details</a>
+                </div>
+            </div>
+
+            <div class="row">
+                <img src="Images/lamb.jpg" alt="">
+                <div class="shop-text">
+                    <h5>₹3.73 Cr*</h5>
+                    <h3>Lamborghini Hurracan</h3>
+                    <p>5.2-liter V-10 engine that produces 631 horsepower. </p>
+                    <a href="https://www.lamborghini.com/en-en/models/huracan" class="view-details-link">View Details</a>
+                </div>
+            </div>
+
+            <div class="row">
+                <img src="Images/lamb2.jpg" alt="">
+                <div class="shop-text">
+                    <h5>₹4.22 Cr*</h5>
+                    <h3>Lamborghini Urus</h3>
+                    <p>Engine: 4.0-liter twin-turbocharged V8 engine with 657 horsepower</p>
+                    <a href="https://www.lamborghini.com/en-en/models/urus" class="view-details-link">View Details</a>
+                </div>
+            </div>
+
+            <div class="row">
+                <img src="Images/car1.jpg" alt="">
+                <div class="shop-text">
+                    <h5>₹46.17 Lakh*</h5>
+                    <h3>Toyota Camry</h3>
+                    <p>Engine: 2.5-liter self-charging petrol hybrid engine with an e-CVT gearbox</p>
+                    <a href="https://www.toyotabharat.com/showroom/camry/" class="view-details-link">View Details</a>
+                </div>
+            </div>
+
+            <div class="row">
+                <img src="Images/mk5.jpg" alt="">
+                <div class="shop-text">
+                    <h5>₹95Lakh*</h5>
+                    <h3>Toyota Supra MK-5</h3>
+                    <p>2.0-liter 4-cylinder turbocharged engine that produces 255 horsepower and 295 lb-ft of torque</p>
+                    <a href="https://www.toyota.com/grsupra/" class="view-details-link">View Details</a>
+                </div>
+            </div>
+
+            <div class="row">
+                <img src="Images/civic.jpg" alt="">
+                <div class="shop-text">
+                    <h5>₹23 Lakh*</h5>
+                    <h3>Honda Civic</h3>
+                    <p>Engine: 4-cylinder, 1597 cc diesel or 1799 cc petrol engine</p>
+                    <a href="https://automobiles.honda.com/civic-type-r" class="view-details-link">View Details</a>
+                </div>
+            </div>
+
+            <div class="row">
+                <img src="Images/hrv.jpg" alt="">
+                <div class="shop-text">
+                    <h5>₹40 Lakh*</h5>
+                    <h3>Honda HR-V</h3>
+                    <p>1.5-liter Atkinson cycle i-VTEC four-cylinder petrol engine, two electric motors, and a lithium-ion battery pack</p>
+                    <a href="https://automobiles.honda.com/hr-v" class="view-details-link">View Details</a>
+                </div>
+            </div>
+
+            <div class="row">
+                <img src="Images/polo.jpg" alt="">
+                <div class="shop-text">
+                    <h5>₹20 Lakh*</h5>
+                    <h3>VW Polo GTI</h3>
+                    <p>Engine. 1798 cc, 4 Cylinders Inline, 4 Valves/Cylinder, DOHC.Engine Type. 1.8L TSI</p>
+                    <a href="https://www.volkswagen.co.uk/en/new/polo-gti.html" class="view-details-link">View Details</a>
+                </div>
+            </div>
+
+            <div class="row">
+                <img src="Images/golf.jpg" alt="">
+                <div class="shop-text">
+                    <h5>₹30 Lakh*</h5>
+                    <h3>VW Golf GTI</h3>
+                    <p>Engine: 2.0-liter turbocharged 4-cylinder engine with 241 horsepower and 273 lb-ft of torque</p>
+                    <a href="https://www.vw.com/en/models/golf-gti.html" class="view-details-link">View Details</a>
+                </div>
+            </div>
+
+            <div class="row">
+                <img src="Images/911.jpg" alt="">
+                <div class="shop-text">
+                    <h5>₹2.5 Cr*</h5>
+                    <h3>Porsche 911 (992) Soft kit</h3>
+                    <p>The 3996 cc Petrol engine generates a power of 379.50bhp@6500rpm and a torque of 465Nm@6300rpm</p>
+                    <a href="https://www.mansory.com/car/porsche-911-992-soft-kit#1" class="view-details-link">View Details</a>
+                </div>
+            </div>
+
+            <div class="row">
+                <img src="Images/panamera.jpg" alt="">
+                <div class="shop-text">
+                    <h5>₹1.68 Cr*</h5>
+                    <h3>Porsche Panamera</h3>
+                    <p>ngine: 3998 cc, 4-cylinder, 8-cylinder petrol engine</p>
+                    <a href="https://www.porsche.com/international/models/panamera/panamera-models/panamera/" class="view-details-link">View Details</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="main-btn">
+            <a href="" class="btn">View All Cars</a>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="center-text">
+            <h5>About Us</h5>
+            <h2>Why Choose Us</h2>
+        </div>
+
+        <div class="about-content">
+            <div class="box">
+                <i class='bx bxs-offer' style='font-size: 40px; color: #405ff2;'></i>
+                <h3>Special Finance Offers</h3>
+                <p>Interest-Free Financing: Save money by paying no interest over the course of your loan term and payments over 36 months with no additional cost.</p>
+            </div>
+
+            <div class="box">
+                <i class='bx bxs-star' style='font-size: 40px; color: #405ff2;'></i>
+                <h3>Star Customer Program</h3>
+                <p>Lower Interest Rates: Enjoy reduced APR rates as low as 1.9% on select models.<br>
+                    Bonus Incentives: Qualify for additional cash-back offers or down payment assistance up to $1,000.<br>
+                </p>
+            </div>
+
+            <div class="box">
+                <i class='bx bxs-purchase-tag-alt' style='font-size: 40px; color: #405ff2;'></i>
+                <h3>Tag & Save - Exclusive Discount Program</h3>
+                <p>Instant Discounts: Get up to $2,000 off MSRP on tagged vehicles.<br>
+                    Low APR Financing: Enjoy financing rates as low as 2.5% APR for qualified buyers.<br>
+                </p>
+            </div>
+
+            <div class="box">
+                <i class='bx bxs-car' style='font-size: 40px; color: #405ff2;'></i>
+                <h3>Drive Away Deal - Low Down Payment Options</h3>
+                <p>Low Down Payments: Start your journey with down payments as low as ₹9,000.<br>
+                    Competitive Interest Rates: Enjoy low APR financing starting at 1.9% for qualified buyers.<br>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- contact section  -->
+    <section class="contact" id="contact">
+        <div class="main-contact">
+            <div class="contact-content">
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">FAQs</a></li>
+                <li><a href="#">Terms</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </div>
+
+            <div class="contact-content">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#categories">categories</a></li>
+                <li><a href="#shop">Shop</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contactus">Contact Us</a></li>
+            </div>
+
+            <div class="contact-content">
+                <li><a href="#">Get In Touch</a></li>
+                <li><a href="#">Help Center</a></li>
+                <li><a href="#">Live Chat</a></li>
+                <li><a href="#">How it works</a></li>
+                <li><a href="#">Terms & Conditions</a></li>
+            </div>
+
+            <div class="contact-content">
+                <li><a href="#">Monday - Friday: 9:00am - 9:00pm</a></li>
+                <li><a href="#">Saturday: 9:00am - 7:00pm</a></li>
+                <li><a href="#">Sunday: Closed</a></li>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- footer  -->
+    <footer>
+        <small class="foooter">&copy 2024 cardealer saneliteengines.com. All Rights Reserved</small>
+    </footer>
+
+    <!-- link to custom js -->
+    <script src="script.js"></script>
+
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: "Outfit", sans-serif;
+    scroll-behavior: smooth;
+}
+
+:root{
+    --bg-color: #fff;
+    --text-color:#22100d;
+    --second-color:#eef1fb;
+    --main-color:#405ff2;
+    --on-hover:#253896;
+
+    --big-font: 3.8rem;
+    --h2-font: 2.6rem;
+    --p-font: 1.1rem;
+
+    --transition:all .4s ease-in-out;
+}
+
+body{
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+header{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index:1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 23px 13%;
+    background-color: transparent;
+    transform: var(--transition);
+}
+
+.logo img{
+    width: 160px;
+    max-width: 100%;
+    height: auto;
+}
+
+.navbar{
+    display: flex;
+}
+
+.navbar a{
+    color: var(--text-color);
+    font-size: var(--p-font);
+    font-weight: 500;
+    padding: 10px 22px;
+    transition: var(--transition);
+}
+
+.navbar a:hover{
+    color: var(--main-color);
+}
+
+.header-icons{
+    display: flex;
+    align-items: center;
+}
+
+.header-icons i{
+    margin-left: 10px;
+    font-size: 22px;
+    color: var(--text-color);
+    margin-right: 15px;
+    transition: var(--transition);
+}
+
+.header-icons i:hover{
+    transform: scale(1.1);
+    color: var(--main-color);
+}
+
+#menu-icon{
+    font-size: 34px;
+    color: var(--text-color);
+    cursor: pointer;
+    z-index: 10001;
+    display: none;
+}
+
+header.sticky{
+    background-color: var(--bg-color);
+    padding: 12px 13%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+section{
+    padding: 80px 13%;
+}
+
+.home{
+    background-color: var(--second-color);
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+
+.home-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 150px;
+}
+
+.home-text{
+    text-align: center;
+    padding-bottom: 80px;
+}
+
+.home-text p{
+    color: var(--main-color);
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.home-text h1{
+    font-size: var(--big-font);
+
+}
+
+form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: var(--bg-color);
+    padding: 20px;
+    border-radius: 50px;
+
+}
+
+form div{
+    margin: 0 10px;
+}
+
+form label{
+    font-weight: 700;
+    color: #333;
+}
+
+form select,
+form input[type="number"] {
+    padding: 10px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 10px;
+}
+
+form button{
+    padding: 10px 20px;
+    margin-top: 5px;
+    background-color: var(--main-color);
+    color: var(--bg-color);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: var(--text-color);
+}
+
+form button:hover{
+    background-color: var(--on-hover);
+
+}
+
+.home-img{
+    margin-top: 20px;
+}
+
+.home-img img{
+    max-width: 100%;
+    
+}
+
+.container{
+    padding: 70px 13%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+    gap: 1.5rem;
+    align-items: center;
+    cursor: pointer;
+}
+
+.container h2{
+    font-size: var(--h2-font);
+    grid-column: 1 /-1;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.container-box{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border: 1px solid #dce4fd;
+    border-radius: 20px;
+    padding: 20px 30px;
+    transition: var(--transition);
+}
+
+.container-box:hover{
+    background-color: var(--second-color);
+    transform: translateY(-10px);
+}
+
+.center-text{
+    text-align: center;
+}
+
+.center-text h5{
+    color: var(--main-color);
+    letter-spacing: 1px;
+}
+
+.center-text h2{
+    font-size: var(--h2-font);
+}
+
+.categories-content{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+    gap: 1.5rem;
+    align-items: center;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.categories-content a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.box{
+    border: 1px solid #dce4fd;
+    border-radius: 20px;
+    padding: 20px 30px;
+    transition: var(--transition);
+}
+
+.box:hover{
+    background-color: var(--second-color);
+    transform: translateY(-10px);
+}
+
+.box img{
+    height: auto;
+}
+
+.box h3:hover{
+    color: var(--main-color);
+}
+
+.main-btn{
+    text-align: center;
+    margin-top: 4rem;
+}
+
+.btn{
+    padding: 15px 25px;
+    margin-top: 5px;
+    background-color: var(--main-color);
+    color: var(--bg-color);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn:hover{
+    background-color: var(--on-hover);
+}
+
+.shop-content{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, auto));
+    gap: 2rem;
+    align-items: center;
+    margin-top: 3rem;
+    cursor: pointer;
+    border-radius: 15px;
+}
+
+.row{
+    background-color: rgb(26, 26, 26);
+    color: var(--bg-color);
+    padding: 0px 0px 10px 0px;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.row:hover{
+    transform: translateY(-10px);
+}
+
+.row img{
+    object-fit: cover;
+    border-radius: 15px 15px 0px 0px;
+    max-width: 100%;
+    height:auto;
+}
+
+.shop-text{
+    padding: 35px 20px;
+}
+
+.shop-text h5{
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.shop-text h3{
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 10px;
+    margin: 15px 0 15px;
+    transition: var(--transition);
+}
+
+.shop-text h3:hover{
+    text-decoration: underline;
+}
+
+.view-details-link{
+    display: block;
+    color: var(--bg-color);
+    text-decoration: none;
+    margin-top: 10px;
+    transition: var(--transition);
+}
+
+.view-details-link:hover{
+    text-decoration: underline;
+}
+
+.about-content{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+    gap: 1.5rem;
+    align-items: center;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.about .box{
+    border: none;
+}
+
+.about .box h3{
+    padding: 10px 0 7px;
+}
+
+.contact{
+    padding: 60px 13%;
+    border-top: 1.5px solid var(--second-color);
+}
+
+.main-contact{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, auto));
+    gap: 2rem;
+}
+
+.contact li{
+    margin-bottom: 10px;
+}
+
+.contact-content a{
+    font-size: 16px;
+    color: var(--text-color);
+    transition: var(--transition);
+}
+
+footer{
+    text-align: center;
+    border-top: 1.5px solid var(--second-color);
+    padding: 20px 0;
+}
+
+
+/* Responsive css */
+
+@media only screen and(max-width: 462px){
+    section{
+        padding: 40px 10%;
+    }
+
+    .home-content{
+        margin-top: 100px;
+    }
+
+    .home-text{
+        margin-bottom: 40px;
+    }
+
+    .home-text p{
+        font-size: 14px;
+    }
+
+    .home-text h1{
+        font-size: 2.8rem;
+    }
+
+    form{
+        padding: 10px;
+    }
+
+    form select,
+    form input[type="number"],
+    form button{
+        padding: 8px;
+        font-size: 14px;
+        margin-top: 3px;
+    }
+
+    .home-img{
+        margin-top: 10px;
+    }
+
+    .home-img img{
+        max-width: 80%;
+    }
+}
+
+@media screen and (max-width: 768px){
+    section{
+        padding: 60px 13%;
+    }
+
+    .home-content{
+        margin-top: 100px;
+    }
+
+    .home-text p{
+        font-size: 14px;
+    }
+
+    .home-text h1{
+        font-size: 2.5rem;
+    }
+
+    form{
+        padding: 15px;
+    }
+
+    form div{
+        margin: 10px 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    form label{
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    form select,
+    form input[type="number"],
+    form button{
+        width: 100%;
+        margin: 5px 0;
+    }
+}
+
+@media screen and (max-width:1125px){
+    .shop-content{
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+        margin-top: 2rem;
+    }
+}
+
+@media screen and (max-width:1070px){
+    #menu-icon{
+        display: block;
+    }
+
+    .navbar{
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        width: 300px;
+        height: 100vh;
+        background: var(--main-color);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 170px 30px;
+        transition: var(--transition);
+    }
+
+    .navbar a{
+        display: block;
+        margin: 1.3rem 0;
+        color: var(--bg-color);
+    }
+
+    .navbar:hover{
+        color: var(--bg-color);
+        transform: translateY(-5px);
+    }
+
+    .navbar.open{
+        right: 0;
+    }
+}
+
+
+
+    </style>
+
+</body>
+</html>
